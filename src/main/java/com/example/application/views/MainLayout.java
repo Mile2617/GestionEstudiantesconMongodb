@@ -1,5 +1,6 @@
 package com.example.application.views;
 
+import com.example.application.controllers.SistemaGestion;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;
@@ -30,6 +31,7 @@ public class MainLayout extends AppLayout {
         setPrimarySection(Section.DRAWER);
         addDrawerContent();
         addHeaderContent();
+
     }
 
     private void addHeaderContent() {
@@ -56,14 +58,20 @@ public class MainLayout extends AppLayout {
         SideNav nav = new SideNav();
 
         List<MenuEntry> menuEntries = MenuConfiguration.getMenuEntries();
-        menuEntries.forEach(entry -> {
-            if (entry.icon() != null) {
-                nav.addItem(new SideNavItem(entry.title(), entry.path(), new SvgIcon(entry.icon())));
-            } else {
-                nav.addItem(new SideNavItem(entry.title(), entry.path()));
-            }
-        });
+        //nav.addItem(new SideNavItem(menuEntries.get(0).title(), menuEntries.get(0).path(), new SvgIcon(menuEntries.get(0).icon())));
+        //nav.addItem(new SideNavItem(menuEntries.get(1).title(), menuEntries.get(1).path(), new SvgIcon(menuEntries.get(1).icon())));
 
+       menuEntries.stream()
+                        .filter(entry -> entry.title().equals("Estudiantes")
+                        || entry.title().equals("Asignaturas")
+                        )
+                        .forEach(entry -> {
+                            if (entry.icon() != null) {
+                                nav.addItem(new SideNavItem(entry.title(), entry.path(), new SvgIcon(entry.icon())));
+                            } else {
+                                nav.addItem(new SideNavItem(entry.title(), entry.path()));
+                            }
+                        });
         return nav;
     }
 
