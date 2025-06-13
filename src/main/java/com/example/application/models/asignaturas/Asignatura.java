@@ -1,6 +1,6 @@
 package com.example.application.models.asignaturas;
 
-import com.example.application.controllers.IAsignatura;
+import com.example.application.interfaces.IAsignatura;
 
 public abstract class Asignatura implements IAsignatura {
 

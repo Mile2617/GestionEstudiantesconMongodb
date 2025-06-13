@@ -4,8 +4,8 @@ package com.example.application.views.asignaturas;
 //import com.example.application.models.asignaturas.Materia;
 //import com.example.application.models.asignaturas.Modulo;
 //import com.example.application.utils.Util;
-import com.example.application.controllers.IAsignatura;
-import com.example.application.controllers.SistemaGestion;
+import com.example.application.interfaces.IAsignatura;
+import com.example.application.controllers.AsignaturaViewController;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -33,10 +33,10 @@ public class NuevaAsignaturaView extends Composite<VerticalLayout> implements Be
     String action;
     IAsignatura asignatura;
     String codigoAsignatura;
-    SistemaGestion sg;
+    AsignaturaViewController sg;
 
     public NuevaAsignaturaView() {
-        sg = new SistemaGestion();
+        sg = new AsignaturaViewController();
         FormLayout formLayout2Col = new FormLayout();
         tfNombre = new TextField();
         tfCodigo = new TextField();

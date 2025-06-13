@@ -1,11 +1,8 @@
 package com.example.application.views.estudiantes;
 
-//import com.example.application.models.estudiantes.Estudiante;
-//import com.example.application.models.PostGrado;
-//import com.example.application.models.estudiantes.Pregrado;
-import com.example.application.controllers.IEstudiante;
-import com.example.application.controllers.SistemaGestion;
-import com.example.application.utils.Util;
+
+import com.example.application.controllers.EstudianteViewController;
+import com.example.application.interfaces.IEstudiante;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -40,9 +37,10 @@ public class NuevoEstudianteView extends Composite<VerticalLayout> implements Be
     String action;
     IEstudiante estudiante;
     String estudianteId;
-    SistemaGestion sg;
+    EstudianteViewController sg;
 
     public NuevoEstudianteView() {
+        sg = new EstudianteViewController();
         FormLayout formLayout2Col = new FormLayout();
         tfNombre = new TextField();
         tfApellido = new TextField();
@@ -95,8 +93,8 @@ public class NuevoEstudianteView extends Composite<VerticalLayout> implements Be
         getContent().add(layoutRow);
         layoutRow.add(btGuardar);
         layoutRow.add(btCancelar);
-        sg = new SistemaGestion();
-        // Acción para guardar
+
+
 
     }
 
@@ -106,7 +104,7 @@ public class NuevoEstudianteView extends Composite<VerticalLayout> implements Be
         action = event.getRouteParameters().get("action").orElse(null);
         if (action!=null && (action.equals("edit") || action.equals("view"))) {
             if (estudianteId != null) {
-                estudiante = Util.estudiantes.stream().filter(e -> e.getId().equals(estudianteId)).findFirst().orElse(null);
+                estudiante = sg.getEstudiantes().stream().filter(e -> e.getId().equals(estudianteId)).findFirst().orElse(null);
                 if (estudiante != null) {
                     setEstudiante(estudiante);
                     if(action.equals("view")) {

@@ -1,6 +1,5 @@
 package com.example.application.views;
 
-import com.example.application.controllers.SistemaGestion;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;

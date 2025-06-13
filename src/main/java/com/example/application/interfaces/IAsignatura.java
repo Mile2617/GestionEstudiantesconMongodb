@@ -1,4 +1,4 @@
-package com.example.application.controllers;
+package com.example.application.interfaces;
 
 public interface IAsignatura {
 
@@ -7,8 +7,6 @@ public interface IAsignatura {
     public void setNombre(String nombre);
 
     public String getCodigo();
-
-    public void setCodigo(String codigo);
 
     public int getCreditos();
 

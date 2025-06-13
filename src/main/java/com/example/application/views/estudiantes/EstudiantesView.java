@@ -1,8 +1,9 @@
 package com.example.application.views.estudiantes;
 
 
-import com.example.application.controllers.IEstudiante;
-import com.example.application.controllers.SistemaGestion;
+import com.example.application.controllers.EstudianteViewController;
+import com.example.application.interfaces.IEstudiante;
+import com.example.application.controllers.AsignaturaViewController;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -28,10 +29,10 @@ public class EstudiantesView extends Composite<VerticalLayout> {
 
     Grid<IEstudiante> stripedGrid;
     Button buttonNuevoEstudiante;
-    SistemaGestion sg;
+    EstudianteViewController sg;
 
     public EstudiantesView() {
-        sg = new SistemaGestion();
+        sg = new EstudianteViewController();
         HorizontalLayout layoutRow = new HorizontalLayout();
         buttonNuevoEstudiante = new Button();
         stripedGrid = new Grid<>(IEstudiante.class, false);

@@ -1,6 +1,6 @@
 package com.example.application.models.estudiantes;
 
-import com.example.application.controllers.IEstudiante;
+import com.example.application.interfaces.IEstudiante;
 import com.example.application.models.asignaturas.Asignatura;
 
 import java.text.SimpleDateFormat;

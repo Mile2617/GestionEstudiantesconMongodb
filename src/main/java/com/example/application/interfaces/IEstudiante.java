@@ -1,4 +1,4 @@
-package com.example.application.controllers;
+package com.example.application.interfaces;
 
 import java.util.Date;
 

@@ -1,7 +1,7 @@
 package com.example.application.utils;
 
-import com.example.application.controllers.IAsignatura;
-import com.example.application.controllers.IEstudiante;
+import com.example.application.interfaces.IAsignatura;
+import com.example.application.interfaces.IEstudiante;
 import com.example.application.models.asignaturas.Materia;
 import com.example.application.models.asignaturas.Modulo;
 import com.example.application.models.estudiantes.Postgrado;

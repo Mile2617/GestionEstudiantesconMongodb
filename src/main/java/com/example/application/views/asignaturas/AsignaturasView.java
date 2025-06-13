@@ -1,8 +1,8 @@
 package com.example.application.views.asignaturas;
 
 
-import com.example.application.controllers.IAsignatura;
-import com.example.application.controllers.SistemaGestion;
+import com.example.application.interfaces.IAsignatura;
+import com.example.application.controllers.AsignaturaViewController;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -28,10 +28,10 @@ public class AsignaturasView extends Composite<VerticalLayout> {
 
     Grid<IAsignatura> gridAsignaturas;
     Button buttonNuevaAsignatura;
-    SistemaGestion sg;
+    AsignaturaViewController sg;
 
     public AsignaturasView() {
-        sg = new SistemaGestion();
+        sg = new AsignaturaViewController();
         HorizontalLayout layoutRow = new HorizontalLayout();
         buttonNuevaAsignatura = new Button();
         gridAsignaturas = new Grid<>(IAsignatura.class, false);
