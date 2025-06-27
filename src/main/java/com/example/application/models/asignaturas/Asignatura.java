@@ -1,10 +1,14 @@
 package com.example.application.models.asignaturas;
 
 import com.example.application.interfaces.IAsignatura;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
 public abstract class Asignatura implements IAsignatura {
 
     private String nombre;
+    @Id
     private String codigo;
     private int creditos;
 

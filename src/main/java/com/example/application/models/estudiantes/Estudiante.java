@@ -2,13 +2,16 @@ package com.example.application.models.estudiantes;
 
 import com.example.application.interfaces.IEstudiante;
 import com.example.application.models.asignaturas.Asignatura;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+@Document
 public abstract class Estudiante implements IEstudiante {
-
+    @Id
     private String id;
     private String nombre;
     private String apellido;

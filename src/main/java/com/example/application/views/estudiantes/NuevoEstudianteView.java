@@ -39,8 +39,8 @@ public class NuevoEstudianteView extends Composite<VerticalLayout> implements Be
     String estudianteId;
     EstudianteViewController sg;
 
-    public NuevoEstudianteView() {
-        sg = new EstudianteViewController();
+    public NuevoEstudianteView(EstudianteViewController sg) {
+        this.sg = sg;
         FormLayout formLayout2Col = new FormLayout();
         tfNombre = new TextField();
         tfApellido = new TextField();

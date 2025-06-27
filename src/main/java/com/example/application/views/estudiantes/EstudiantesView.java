@@ -31,8 +31,8 @@ public class EstudiantesView extends Composite<VerticalLayout> {
     Button buttonNuevoEstudiante;
     EstudianteViewController sg;
 
-    public EstudiantesView() {
-        sg = new EstudianteViewController();
+    public EstudiantesView(EstudianteViewController sg) {
+        this.sg = sg;
         HorizontalLayout layoutRow = new HorizontalLayout();
         buttonNuevoEstudiante = new Button();
         stripedGrid = new Grid<>(IEstudiante.class, false);
