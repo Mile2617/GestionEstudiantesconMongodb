@@ -1,9 +1,5 @@
 package com.example.application.views.asignaturas;
 
-//import com.example.application.models.asignaturas.Asignatura;
-//import com.example.application.models.asignaturas.Materia;
-//import com.example.application.models.asignaturas.Modulo;
-//import com.example.application.utils.Util;
 import com.example.application.interfaces.IAsignatura;
 import com.example.application.controllers.AsignaturaViewController;
 import com.vaadin.flow.component.Composite;
@@ -17,6 +13,7 @@ import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.*;
 import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.lineawesome.LineAwesomeIconUrl;
 
 @PageTitle("Nueva Asignatura")
@@ -35,8 +32,9 @@ public class NuevaAsignaturaView extends Composite<VerticalLayout> implements Be
     String codigoAsignatura;
     AsignaturaViewController sg;
 
-    public NuevaAsignaturaView() {
-        sg = new AsignaturaViewController();
+    @Autowired
+    public NuevaAsignaturaView(AsignaturaViewController sg) {
+        this.sg = sg;
         FormLayout formLayout2Col = new FormLayout();
         tfNombre = new TextField();
         tfCodigo = new TextField();

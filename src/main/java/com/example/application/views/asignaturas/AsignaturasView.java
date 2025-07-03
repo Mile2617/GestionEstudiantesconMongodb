@@ -1,5 +1,4 @@
-package com.example.application.views.asignaturas;
-
+ package com.example.application.views.asignaturas;
 
 import com.example.application.interfaces.IAsignatura;
 import com.example.application.controllers.AsignaturaViewController;
@@ -18,6 +17,7 @@ import com.vaadin.flow.router.Menu;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.lumo.LumoUtility.Gap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.lineawesome.LineAwesomeIconUrl;
 
 @PageTitle("Asignaturas")
@@ -26,12 +26,13 @@ import org.vaadin.lineawesome.LineAwesomeIconUrl;
 @Uses(Icon.class)
 public class AsignaturasView extends Composite<VerticalLayout> {
 
-    Grid<IAsignatura> gridAsignaturas;
-    Button buttonNuevaAsignatura;
-    AsignaturaViewController sg;
+    private final Grid<IAsignatura> gridAsignaturas;
+    private final Button buttonNuevaAsignatura;
+    private final AsignaturaViewController sg;
 
-    public AsignaturasView() {
-        sg = new AsignaturaViewController();
+    @Autowired
+    public AsignaturasView(AsignaturaViewController sg) {
+        this.sg = sg;
         HorizontalLayout layoutRow = new HorizontalLayout();
         buttonNuevaAsignatura = new Button();
         gridAsignaturas = new Grid<>(IAsignatura.class, false);
@@ -86,7 +87,7 @@ public class AsignaturasView extends Composite<VerticalLayout> {
 
     public void onClickBorrarAsignatura(IAsignatura asignatura) {
         sg.eliminarAsignatura(asignatura);
-        gridAsignaturas.getDataProvider().refreshAll();
+        gridAsignaturas.setItems(sg.getAsignaturas());
     }
 
     public void onClickNuevaAsignatura() {

@@ -1,9 +1,6 @@
 package com.example.application.utils;
 
-import com.example.application.interfaces.IAsignatura;
 import com.example.application.interfaces.IEstudiante;
-import com.example.application.models.asignaturas.Materia;
-import com.example.application.models.asignaturas.Modulo;
 import com.example.application.models.estudiantes.Postgrado;
 import com.example.application.models.estudiantes.Pregrado;
 
@@ -15,18 +12,7 @@ import java.util.List;
 
 public class Util {
 
-    public static List<IAsignatura> asignaturas  = new ArrayList<>(List.of(
-            new Modulo("Matemáticas Básicas", "MOD101", 3),
-            new Modulo("Física General", "MOD102", 4),
-            new Modulo("Química Fundamental", "MOD103", 3),
-            new Modulo("Programación I", "MOD104", 5),
-            new Modulo("Historia Universal", "MOD105", 2),
-            new Materia("Álgebra", "MAT201", 3),
-            new Materia("Física II", "MAT202", 4),
-            new Materia("Química Orgánica", "MAT203", 3),
-            new Materia("Programación Avanzada", "MAT204", 5),
-            new Materia("Literatura Española", "MAT205", 3)
-    ));
+    // Removed static List<IAsignatura> asignaturas
 
     public static List<IEstudiante> estudiantes = new ArrayList<>();
 
