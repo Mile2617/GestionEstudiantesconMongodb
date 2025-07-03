@@ -17,7 +17,8 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 @Theme(value = "gestion-estudiantes")
-public class Application implements AppShellConfigurator {
+public class
+Application implements AppShellConfigurator {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
