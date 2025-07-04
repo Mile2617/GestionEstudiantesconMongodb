@@ -148,7 +148,7 @@
                 <configuration>
                     <schemaVersion>v2</schemaVersion>
                     <resourceGroup>gestion-estudiantes-1749850828333-rg</resourceGroup>
-                    <appName>gestion-estudiantes-1749850828333</appName>
+                    <appName>gestion-estudiantes</appName>
                     <pricingTier>F1</pricingTier>
                     <region>centralus</region>
                     <runtime>
