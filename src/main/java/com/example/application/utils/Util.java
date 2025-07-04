@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Util {
 
-    // Removed static List<IAsignatura> asignaturas
+
 
     public static List<IEstudiante> estudiantes = new ArrayList<>();
 
